@@ -148,6 +148,30 @@ Reports are saved in the exe directory under `<ComputerName>/` subfolder:
 - [SysInfoTool](https://github.com/GuerGuaZhang/SysInfoTool) - Core collection tool / 核心采集工具
 - [DSH](https://github.com/deepseek-ai/dsh) - DeepSeek Harness / DeepSeek 工具链
 
+## 📦 npm Package / npm 包
+
+This skill is also available as an npm package:
+
+此技能也可作为npm包使用：
+
+```bash
+# Install via DSH / 通过 DSH 安装
+dsh plugin add dsh-sysinfo-report
+
+# Or install via npm / 或通过 npm 安装
+npm install -g dsh-sysinfo-report
+```
+
+### Publishing / 发布
+
+```bash
+# Login to npm / 登录npm
+npm adduser
+
+# Publish / 发布
+npm publish
+```
+
 ## 📄 License / 许可
 
 MIT

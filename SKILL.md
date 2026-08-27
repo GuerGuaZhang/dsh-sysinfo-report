@@ -10,24 +10,52 @@ whenToUse: 当用户需要查看电脑配置信息、生成系统报告、排查
 
 ## 前置条件
 
-- SysInfoTool.exe 必须存在于当前工作目录或已知路径
 - Windows 10 1809+ / Windows 11
 - 管理员权限可采集完整信息（普通权限也能运行，部分项目受限）
+- SysInfoTool.exe 需放置在技能目录中（见下方安装说明）
+
+## 安装说明
+
+### 第一步：下载 SysInfoTool.exe
+
+从 [SysInfoTool Releases](https://github.com/GuerGuaZhang/SysInfoTool/releases) 下载最新版本的 `SysInfoTool.exe`。
+
+### 第二步：放置到技能目录
+
+将 `SysInfoTool.exe` 放入本技能所在的目录：
+
+```
+~/.dsh/skills/sysinfo-report/
+├── SKILL.md              ← 本文件
+└── SysInfoTool.exe       ← 把 exe 放在这里
+```
+
+> 💡 DSH 加载技能时会提供 `resourceBase`（技能目录路径），AI 可以用绝对路径找到同目录下的 exe。
+> 这样做让技能**自包含**——拷贝整个目录到任何电脑都能用，无需额外配置 PATH。
+
+### 第三步：验证
+
+安装后在 DSH 对话中说「生成电脑信息报告」或「看看这台电脑的配置」即可触发。
 
 ## 调用方式
 
+AI 会自动使用技能目录中的 SysInfoTool.exe。以下是等效的手动命令：
+
 ```powershell
+# 定位 exe（AI 自动解析，手动测试时替换为实际路径）
+$skillDir = "$env:USERPROFILE\.dsh\skills\sysinfo-report"
+
 # 采集并输出 JSON（推荐，AI 直接读取）
-& 'SysInfoTool.exe' --console --json-only
+& "$skillDir\SysInfoTool.exe" --console --json-only
 
 # 不脱敏（显示完整序列号/MAC/IP/用户名）
-& 'SysInfoTool.exe' --console --json-only --no-mask
+& "$skillDir\SysInfoTool.exe" --console --json-only --no-mask
 
 # 指定输出目录
-& 'SysInfoTool.exe' --console --json-only --out=D:\报告
+& "$skillDir\SysInfoTool.exe" --console --json-only --out=D:\报告
 
 # 同时生成 HTML 和 JSON
-& 'SysInfoTool.exe' --console
+& "$skillDir\SysInfoTool.exe" --console
 ```
 
 ## 输出结构

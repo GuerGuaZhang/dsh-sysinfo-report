@@ -1,14 +1,22 @@
 {
   "name": "dsh-sysinfo-report",
   "version": "1.0.0",
-  "description": "DSH 技能插件：生成电脑硬件/系统/软件/网络信息报告",
-  "keywords": ["dsh", "dsh-plugin", "sysinfo", "system-report", "hardware"],
+  "description": "DSH skill plugin: Collect system hardware/software/network info and generate JSON for AI analysis",
+  "description_zh": "DSH 技能插件：采集电脑硬件/系统/软件/网络信息，生成 JSON 供 AI 分析",
+  "keywords": [
+    "dsh", "dsh-plugin", "dsh-skill",
+    "sysinfo", "system-report", "hardware", "diagnostics",
+    "电脑信息", "系统报告", "硬件检测"
+  ],
   "author": "GuerGuaZhang",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GuerGuaZhang/SysInfoTool.git",
-    "directory": "dsh-plugin"
+    "url": "https://github.com/GuerGuaZhang/dsh-sysinfo-report.git"
+  },
+  "homepage": "https://github.com/GuerGuaZhang/dsh-sysinfo-report#readme",
+  "bugs": {
+    "url": "https://github.com/GuerGuaZhang/dsh-sysinfo-report/issues"
   },
   "files": [
     "SKILL.md"

@@ -33,13 +33,16 @@ dsh plugin --profile <your-profile> add /path/to/dsh-sysinfo-report
 
 ### Manual Setup / 手动设置
 
-1. Download `SysInfoTool.exe` from [Releases](https://github.com/GuerGuaZhang/SysInfoTool/releases)
-2. Place it in the skill directory:
+1. Download all files from [GitHub Releases](https://github.com/GuerGuaZhang/dsh-sysinfo-report/releases/latest)
+2. Extract to skill directory:
    ```
    ~/.dsh/skills/sysinfo-report/
    ├── SKILL.md              ← Skill definition
-   └── SysInfoTool.exe       ← Place exe here
+   ├── SysInfoTool.exe       ← Core tool (included in release)
+   └── README.md             ← Documentation
    ```
+
+**Note**: The release includes `SysInfoTool.exe` - no need to download separately!
 
 ### Usage / 使用
 
